@@ -1,0 +1,103 @@
+body{
+    margin: 0;
+    padding: 0;
+    background-color: #222;
+    font-family: 'Quicksand', sans-serif;
+}
+
+*{
+    box-sizing: border-box;
+}
+
+nav.nav-bar{
+    color: #e1e1e1;
+    height: 72px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #5600e8;
+    margin: 0;
+    padding: 16px;
+    padding-left: 10%;
+    padding-right: 10%;
+}
+
+.nav-brand{
+    width: 20%;
+}
+
+.nav-links{
+    width: 80%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.nav-right{
+    width: 20%;
+    display: flex;
+    justify-content: flex-end;
+}
+
+.content-container{
+    text-align: center;
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(340px, 1fr));
+    grid-gap: .5rem;
+    align-items: start;
+    padding: 64px;
+    padding-right: 128px;
+    padding-left: 128px;
+}
+
+.content-container .card-item .crypto-logo{
+    width: 65px;
+    height: 65px;
+    position: relative;
+    border: solid 3px white;
+    border-radius: 50%;
+    padding:4px;
+}
+
+.content-container .card-item{
+    border-radius: 16px;
+    margin: 16px;
+    padding: 24px;
+    padding-top: 32px;
+    flex-grow: 2;
+    flex-basis: 0;
+    background-color: #292929;
+    border: solid 4px transparent;
+    transition:  0.5s ease-in-out ;
+}
+
+.content-container .card-item:hover{
+    border: 4px solid #5600e8;
+    transform: translateY(-10px);
+}
+
+.content-container .card-item .crypto-title{
+    color: #e1e1e1;
+    font-weight: 900;
+    font-size: 32px;
+    margin-bottom: 8px;
+    margin-top: 8px;
+}
+
+.content-container .card-item .crypto-sub-title{
+    color: #b5b5b5;
+    margin-top: 8px;
+}
+
+.content-container .card-item .change-text{
+    color: #b5b5b5;
+}
+
+.change-percent{
+    color: #fff;
+}
+
+
+.card-item h2{
+    transition: 2s;
+}
