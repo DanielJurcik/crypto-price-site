@@ -107,6 +107,8 @@ function closeNav() {
 
 function scrollFunction() {
     const navBar = document.querySelector(".nav-bar");
+    const bannerElement = document.querySelector(".banner-section");
+    const bannerTranslate = (-document.documentElement.scrollTop)/2;
     if (!navBar) return;
     if (document.body.scrollTop > 380 || document.documentElement.scrollTop > 380) {
         navBar.style.background = "#3b04db";
@@ -117,4 +119,5 @@ function scrollFunction() {
         navBar.style.height = "100px";
         navBar.classList.remove("shadow-bottom");
     }
+    if (bannerTranslate<0) bannerElement.style.transform = "translateY("+bannerTranslate+"px)"; 
 }
