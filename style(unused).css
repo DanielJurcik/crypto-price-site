@@ -1,0 +1,236 @@
+body{
+    margin: 0;
+    padding: 0;
+    background-color: #fff;
+    font-family: 'Quicksand', sans-serif;
+}
+
+*{
+    box-sizing: border-box;
+}
+
+nav.nav-bar{
+    box-sizing: border-box;
+    color: #e1e1e1;
+    height: 100px;
+    margin: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding-left: 10%;
+    padding-right: 10%;
+    position: fixed;
+    width: 100%;
+    top: 0;
+    z-index: 99;
+    transition: 0.4s ease-in-out;
+}
+
+.custom-primary-btn{
+    padding: 12px;
+    border-radius: 12px;
+    background-color: #e1e1e1;
+    color: #3b04db;
+    margin-top: 64px;
+    font-weight: 600;
+    padding-right: 24px;
+    padding-left: 24px;
+    transition: 0.3s ease-in-out;
+    border: 3px solid transparent;
+}
+
+.shadow-bottom{
+    -webkit-box-shadow: 0px 33px 50px -30px rgba(0,0,0,0.48); 
+    box-shadow: 0px 33px 50px -30px rgba(0,0,0,0.48);   
+}
+
+.custom-primary-btn:hover{
+    transform: scale(1.1);
+    cursor: pointer;
+    background-color: #3b04db;
+    color: white;
+    border: 3px solid white;
+}
+
+.nav-brand{
+    width: 20%;
+}
+
+.nav-brand .page-logo{
+    height: 42px;
+    cursor: pointer;
+}
+
+.nav-links{
+    width: 80%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.nav-right{
+    width: 20%;
+    display: flex;
+    justify-content: flex-end;
+}
+
+.nav-right p{
+    display: flex;
+    align-items: center;
+    height: 72px;
+    margin: 0;
+    padding-top: 8px;
+    font-size: 16px;
+    font-weight: 600;
+    border-bottom: 3px solid transparent;
+    margin-left: 16px;
+}
+.nav-right p:hover{
+    border-bottom: 3px solid #e1e1e1;
+}
+
+
+.content-container{
+    text-align: center;
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(340px, 1fr));
+    grid-gap: .5rem;
+    align-items: start;
+    padding: 64px;
+    padding-right: 128px;
+    padding-left: 128px;
+}
+
+.content-container .card-item .crypto-logo{
+    width: 65px;
+    height: 65px;
+    position: relative;
+    border: solid 3px white;
+    border-radius: 50%;
+    padding:4px;
+}
+
+.content-container .card-item{
+    border-radius: 16px;
+    margin: 16px;
+    padding: 24px;
+    padding-top: 32px;
+    flex-grow: 2;
+    flex-basis: 0;
+    background-color: #f9f9f9;
+    border: solid 4px transparent;
+    transition:  0.5s ease-in-out ;
+}
+
+.content-container .card-item:hover{
+    border: 4px solid #5600e8;
+    transform: translateY(-10px);
+}
+
+.content-container .card-item .crypto-title{
+    color: #222;
+    font-weight: 900;
+    font-size: 32px;
+    margin-bottom: 8px;
+    margin-top: 8px;
+}
+
+.content-container .card-item .crypto-sub-title{
+    color: #b5b5b5;
+    margin-top: 8px;
+}
+
+.content-container .card-item .change-text{
+    color: #b5b5b5;
+}
+
+.change-percent{
+    color: #fff;
+}
+
+.card-item .price-wrapper{
+    margin-top: 24px;
+    margin-bottom: 12px;
+    height: 35px;
+    transition: 2s;
+}
+
+.card-item .price-wrapper h2{
+    transition: 2s;
+    color: #e1e1e1;
+}
+
+
+.sidenav {
+    z-index: 999;
+    height: 100%;
+    width: 0;
+    position: fixed;
+    top: 0;
+    right: 0;
+    background-color: #5612e1;
+    overflow-x: hidden;
+    transition: 0.5s;
+    padding-top: 60px;
+  }
+  
+  .sidenav a {
+    padding: 8px 8px 8px 32px;
+    text-decoration: none;
+    font-size: 25px;
+    color: #e1e1e1;
+    display: block;
+    transition: 0.3s;
+  }
+  
+  .sidenav a:hover {
+    color: #f1f1f1;
+  }
+  
+  .sidenav .closebtn {
+    position: absolute;
+    top: 0;
+    right: 25px;
+    font-size: 36px;
+    margin-left: 50px;
+  }
+  
+  @media screen and (max-height: 450px) {
+    .sidenav {padding-top: 15px;}
+    .sidenav a {font-size: 18px;}
+  }
+
+
+  .banner-section{
+      background: url(img/bcg/crypto-banner.png);
+      background-size: cover;
+      background-repeat: no-repeat;
+      background-position: left bottom;
+      padding-top: 200px;
+      padding-bottom: 300px;
+  }
+
+  .banner-section .banner-img{
+      height: 350px;
+      margin-right: 64px;
+  }
+
+  .banner-section .container{
+      display: flex;
+  }
+
+  .banner-section .banner-text{
+      color: white;
+      padding-right: 128px;
+  }
+
+  .banner-section .banner-text h1{
+      font-weight: 900;
+      font-size: 45px;
+  }
+
+  .banner-section .banner-text p{
+      font-size: 16px;
+      margin-bottom: 48px;
+  }
+

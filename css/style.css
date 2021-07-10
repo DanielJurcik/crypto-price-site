@@ -1,0 +1,274 @@
+body {
+  margin: 0;
+  padding: 0;
+  background-color: #fff;
+  font-family: 'Quicksand', sans-serif;
+}
+
+.nav-bar {
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  color: #e1e1e1;
+  height: 100px;
+  margin: 0;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  padding-left: 10%;
+  padding-right: 10%;
+  position: fixed;
+  width: 100%;
+  top: 0;
+  z-index: 99;
+  -webkit-transition: 0.4s ease-in-out;
+  transition: 0.4s ease-in-out;
+}
+
+.custom-primary-btn {
+  padding: 12px;
+  border-radius: 12px;
+  background-color: #e1e1e1;
+  color: #3b04db;
+  margin-top: 64px;
+  font-weight: 600;
+  padding-right: 24px;
+  padding-left: 24px;
+  -webkit-transition: 0.3s ease-in-out;
+  transition: 0.3s ease-in-out;
+  border: 3px solid transparent;
+}
+
+.custom-primary-btn:hover {
+  -webkit-transform: scale(1.1);
+          transform: scale(1.1);
+  cursor: pointer;
+  background-color: #3b04db;
+  color: #fff;
+  border: 3px solid #fff;
+}
+
+.shadow-bottom {
+  -webkit-box-shadow: 0px 33px 50px -30px rgba(0, 0, 0, 0.48);
+  box-shadow: 0px 33px 50px -30px rgba(0, 0, 0, 0.48);
+}
+
+.nav-brand {
+  width: 20%;
+}
+
+.nav-brand .page-logo {
+  height: 42px;
+  cursor: pointer;
+}
+
+.nav-links {
+  width: 80%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.nav-right {
+  width: 20%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: end;
+      -ms-flex-pack: end;
+          justify-content: flex-end;
+}
+
+.nav-right p {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  height: 72px;
+  margin: 0;
+  padding-top: 8px;
+  font-size: 16px;
+  font-weight: 600;
+  border-bottom: 3px solid transparent;
+  margin-left: 16px;
+}
+
+.nav-right p:hover {
+  border-bottom: 3px solid #e1e1e1;
+}
+
+.content-container {
+  text-align: center;
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: (minmax(340px, 1fr))[auto-fill];
+      grid-template-columns: repeat(auto-fill, minmax(340px, 1fr));
+  grid-gap: .5rem;
+  -webkit-box-align: start;
+      -ms-flex-align: start;
+          align-items: start;
+  padding: 64px;
+  padding-right: 128px;
+  padding-left: 128px;
+}
+
+.content-container .card-item {
+  border-radius: 16px;
+  margin: 16px;
+  padding: 24px;
+  padding-top: 32px;
+  -webkit-box-flex: 2;
+      -ms-flex-positive: 2;
+          flex-grow: 2;
+  -ms-flex-preferred-size: 0;
+      flex-basis: 0;
+  background-color: #f9f9f9;
+  border: solid 4px transparent;
+  -webkit-transition: 0.25s ease-in-out;
+  transition: 0.25s ease-in-out;
+}
+
+.content-container .card-item .crypto-logo {
+  width: 65px;
+  height: 65px;
+  position: relative;
+  border: solid 3px transparent;
+  border-radius: 50%;
+  padding: 4px;
+}
+
+.content-container .card-item:hover {
+  -webkit-box-shadow: 0px 33px 50px -30px rgba(0, 0, 0, 0.48);
+  box-shadow: 0px 33px 50px -30px rgba(0, 0, 0, 0.48);
+  -webkit-transform: translateY(-10px);
+          transform: translateY(-10px);
+}
+
+.content-container .card-item .crypto-title {
+  color: #222;
+  font-weight: 900;
+  font-size: 32px;
+  margin-bottom: 8px;
+  margin-top: 8px;
+}
+
+.content-container .card-item .crypto-sub-title {
+  color: #b5b5b5;
+  margin-top: 8px;
+}
+
+.content-container .card-item .change-text {
+  color: #b5b5b5;
+}
+
+.change-percent {
+  color: #fff;
+}
+
+.card-item .price-wrapper {
+  margin-top: 24px;
+  margin-bottom: 12px;
+  height: 35px;
+  -webkit-transition: 2s;
+  transition: 2s;
+}
+
+.card-item .price-wrapper h2 {
+  -webkit-transition: 2s;
+  transition: 2s;
+  color: #e1e1e1;
+}
+
+.sidenav {
+  z-index: 999;
+  height: 100%;
+  width: 0;
+  position: fixed;
+  top: 0;
+  right: 0;
+  background-color: #5e19df;
+  overflow-x: hidden;
+  -webkit-transition: 0.5s;
+  transition: 0.5s;
+  padding-top: 60px;
+}
+
+.sidenav a {
+  padding: 8px 8px 8px 32px;
+  text-decoration: none;
+  font-size: 25px;
+  color: #e1e1e1;
+  display: block;
+  -webkit-transition: 0.3s;
+  transition: 0.3s;
+}
+
+.sidenav a:hover {
+  color: #f1f1f1;
+}
+
+.sidenav .closebtn {
+  position: absolute;
+  top: 0;
+  right: 25px;
+  font-size: 36px;
+  margin-left: 50px;
+}
+
+.banner-section {
+  background: url("../img/bcg/crypto-banner.png");
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: left bottom;
+  padding-top: 200px;
+  padding-bottom: 300px;
+}
+
+.banner-section .banner-img {
+  height: 350px;
+  margin-right: 64px;
+}
+
+.banner-section .container {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+.banner-section .banner-text {
+  color: #fff;
+  padding-right: 128px;
+}
+
+.banner-section .banner-text h1 {
+  font-weight: 900;
+  font-size: 45px;
+}
+
+.banner-section .banner-text p {
+  font-size: 16px;
+  margin-bottom: 48px;
+}
+
+@media screen and (max-height: 450px) {
+  .sidenav {
+    padding-top: 15px;
+  }
+  .sidenav a {
+    font-size: 18px;
+  }
+}
+/*# sourceMappingURL=style.css.map */

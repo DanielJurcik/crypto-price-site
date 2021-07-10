@@ -1,6 +1,5 @@
 let lastPrice = null;
 let cryptoArray = [
-    
     {
         element: 'btc-price',
         ticker: 'btc',
@@ -37,45 +36,85 @@ let cryptoArray = [
         link: 'wss://stream.binance.com:9443/ws/xrpusdt@trade',
         change: 'wss://stream.binance.com:9443/ws/xrpusdt@ticker'
     },
+    {
+        element: 'ltc-price',
+        ticker: 'ltc',
+        link: 'wss://stream.binance.com:9443/ws/ltcusdt@trade',
+        change: 'wss://stream.binance.com:9443/ws/ltcusdt@ticker'
+    },
+    {
+        element: 'dot-price',
+        ticker: 'dot',
+        link: 'wss://stream.binance.com:9443/ws/dotusdt@trade',
+        change: 'wss://stream.binance.com:9443/ws/dotusdt@ticker'
+    },
 ]
 
-cryptoArray.forEach(cryptoObject => {
-    let cryptoChange = new WebSocket(cryptoObject.change);
-    let webSocket = new WebSocket(cryptoObject.link);
-
-    webSocket.onmessage = (event) => {
-        const priceElement = document.getElementById(cryptoObject.element)
-
-        let responseObject = JSON.parse(event.data);
-        let price = parseFloat(responseObject.p).toFixed(2);
-        priceElement.innerHTML = price+" $ ";
-        if (price>lastPrice){
-            priceElement.style.color = "#03da81"; 
-        }
-        if (price<lastPrice){
-            priceElement.style.color = "#cf6679"; 
-        }
-        lastPrice = price   
-    }
-
-    cryptoChange.onmessage = (event) =>{
-        const changeElement = document.querySelector("."+cryptoObject.element)
-        const cryptoLogoElement = document.querySelector("."+cryptoObject.ticker+"-logo")
-        let responseObject = JSON.parse(event.data);
-        let change = parseFloat(responseObject.P).toFixed(2);
-        changeElement.innerText = " "+change +"%";
-        if (change>0){
-            cryptoLogoElement.style.borderColor = "#03da81"; 
-            changeElement.style.color = "#03da81"; 
-        }
-        if (change<0){
-            cryptoLogoElement.style.borderColor = "#cf6679"; 
-            changeElement.style.color = "#cf6679"; 
-        }
-    }
-});
-
-
-function addOnMessageEvent(element){
+async function getCryptoPrices(cryptoArray){
+    cryptoArray.forEach(cryptoObject => {
+        let cryptoChange = new WebSocket(cryptoObject.change);
+        let webSocket = new WebSocket(cryptoObject.link);
     
+        webSocket.onmessage = (event) => {
+            const priceElement = document.getElementById(cryptoObject.element)
+    
+            let responseObject = JSON.parse(event.data);
+            let price = parseFloat(responseObject.p).toFixed(2);
+            if (!price || !priceElement) return;
+            if (price && priceElement) priceElement.innerHTML = price+" $ ";
+            if (price>lastPrice) priceElement.style.color = "#03da81"; 
+            if (price<lastPrice) priceElement.style.color = "#cf6679"; 
+            lastPrice = price   
+        }
+    
+        cryptoChange.onmessage = (event) =>{
+            const changeElement = document.querySelector("."+cryptoObject.element)
+            const cryptoLogoElement = document.querySelector("."+cryptoObject.ticker+"-logo")
+            let responseObject = JSON.parse(event.data);
+            let change = parseFloat(responseObject.P).toFixed(2);
+            if (!change || !changeElement || !cryptoLogoElement) return;
+            changeElement.innerText = " "+change +"%";
+            if (change>0){
+                cryptoLogoElement.style.borderColor = "#03da81"; 
+                changeElement.style.color = "#03da81"; 
+            }
+            if (change<0){
+                cryptoLogoElement.style.borderColor = "#cf6679"; 
+                changeElement.style.color = "#cf6679"; 
+            }
+        }
+    });
+}
+
+
+
+window.onload = function() {
+    getCryptoPrices(cryptoArray);
+};
+
+
+window.onscroll = function() {
+    scrollFunction()
+};
+
+function openNav() {
+    document.getElementById("mySidenav").style.width = "350px";
+}
+  
+function closeNav() {
+    document.getElementById("mySidenav").style.width = "0";
+}
+
+function scrollFunction() {
+    const navBar = document.querySelector(".nav-bar");
+    if (!navBar) return;
+    if (document.body.scrollTop > 380 || document.documentElement.scrollTop > 380) {
+        navBar.style.background = "#3b04db";
+        navBar.style.height = "72px";
+        navBar.classList.add("shadow-bottom");
+    } else {
+        navBar.style.background = "transparent";
+        navBar.style.height = "100px";
+        navBar.classList.remove("shadow-bottom");
+    }
 }

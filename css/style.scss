@@ -1,0 +1,212 @@
+$primary-color: #3b04db;
+$secondary-color: #5e19df;
+$dark-white: #e1e1e1;
+$white: #fff;
+
+$primary-dark: rgba($primary-color, 0.88);
+
+body {
+	margin: 0;
+	padding: 0;
+	background-color: $white;
+	font-family: 'Quicksand', sans-serif;
+}
+.nav-bar {
+	box-sizing: border-box;
+	color: $dark-white;
+	height: 100px;
+	margin: 0;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	padding-left: 10%;
+	padding-right: 10%;
+	position: fixed;
+	width: 100%;
+	top: 0;
+	z-index: 99;
+	transition: 0.4s ease-in-out;
+}
+.custom-primary-btn {
+	padding: 12px;
+	border-radius: 12px;
+	background-color: $dark-white;
+	color: $primary-color;
+	margin-top: 64px;
+	font-weight: 600;
+	padding-right: 24px;
+	padding-left: 24px;
+	transition: 0.3s ease-in-out;
+	border: 3px solid transparent;
+	&:hover {
+		transform: scale(1.1);
+		cursor: pointer;
+		background-color: $primary-color;
+		color: $white;
+		border: 3px solid $white;
+	}
+}
+.shadow-bottom {
+	-webkit-box-shadow: 0px 33px 50px -30px rgba(0,0,0,0.48);
+	box-shadow: 0px 33px 50px -30px rgba(0,0,0,0.48);
+}
+.nav-brand {
+	width: 20%;
+	.page-logo {
+		height: 42px;
+		cursor: pointer;
+	}
+}
+.nav-links {
+	width: 80%;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+.nav-right {
+	width: 20%;
+	display: flex;
+	justify-content: flex-end;
+	p {
+		display: flex;
+		align-items: center;
+		height: 72px;
+		margin: 0;
+		padding-top: 8px;
+		font-size: 16px;
+		font-weight: 600;
+		border-bottom: 3px solid transparent;
+		margin-left: 16px;
+		&:hover {
+			border-bottom: 3px solid #e1e1e1;
+		}
+	}
+}
+.content-container {
+	text-align: center;
+	display: grid;
+	grid-template-columns: repeat(auto-fill, minmax(340px, 1fr));
+	grid-gap: .5rem;
+	align-items: start;
+	padding: 64px;
+	padding-right: 128px;
+	padding-left: 128px;
+	.card-item {
+		.crypto-logo {
+			width: 65px;
+			height: 65px;
+			position: relative;
+			border: solid 3px transparent;
+			border-radius: 50%;
+			padding: 4px;
+		}
+		border-radius: 16px;
+		margin: 16px;
+		padding: 24px;
+		padding-top: 32px;
+		flex-grow: 2;
+		flex-basis: 0;
+		background-color: #f9f9f9;
+		border: solid 4px transparent;
+		transition: 0.25s ease-in-out;
+		&:hover {
+			-webkit-box-shadow: 0px 33px 50px -30px rgba(0,0,0,0.48);
+	        box-shadow: 0px 33px 50px -30px rgba(0,0,0,0.48);
+			transform: translateY(-10px);
+		}
+		.crypto-title {
+			color: #222;
+			font-weight: 900;
+			font-size: 32px;
+			margin-bottom: 8px;
+			margin-top: 8px;
+		}
+		.crypto-sub-title {
+			color: #b5b5b5;
+			margin-top: 8px;
+		}
+		.change-text {
+			color: #b5b5b5;
+		}
+	}
+}
+.change-percent {
+	color: #fff;
+}
+.card-item {
+	.price-wrapper {
+		margin-top: 24px;
+		margin-bottom: 12px;
+		height: 35px;
+		transition: 2s;
+		h2 {
+			transition: 2s;
+			color: #e1e1e1;
+		}
+	}
+}
+.sidenav {
+	z-index: 999;
+	height: 100%;
+	width: 0;
+	position: fixed;
+	top: 0;
+	right: 0;
+	background-color: $secondary-color;
+	overflow-x: hidden;
+	transition: 0.5s;
+	padding-top: 60px;
+	a {
+		padding: 8px 8px 8px 32px;
+		text-decoration: none;
+		font-size: 25px;
+		color: $dark-white;
+		display: block;
+		transition: 0.3s;
+		&:hover {
+			color: #f1f1f1;
+		}
+	}
+	.closebtn {
+		position: absolute;
+		top: 0;
+		right: 25px;
+		font-size: 36px;
+		margin-left: 50px;
+	}
+}
+.banner-section {
+	background: url("../img/bcg/crypto-banner.png");
+	background-size: cover;
+	background-repeat: no-repeat;
+	background-position: left bottom;
+	padding-top: 200px;
+	padding-bottom: 300px;
+	.banner-img {
+		height: 350px;
+		margin-right: 64px;
+	}
+	.container {
+		display: flex;
+	}
+	.banner-text {
+		color: $white;
+		padding-right: 128px;
+		h1 {
+			font-weight: 900;
+			font-size: 45px;
+		}
+		p {
+			font-size: 16px;
+			margin-bottom: 48px;
+		}
+	}
+}
+@media screen and (max-height: 450px) {
+	.sidenav {
+		padding-top: 15px;
+		a {
+			font-size: 18px;
+		}
+	}
+}

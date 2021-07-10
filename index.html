@@ -5,70 +5,221 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="/css/style.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@300;400;500;600;700&display=swap"
         rel="stylesheet">
     <link href="https://fonts.googleapis.com/css?family=Montserrat:900|Work+Sans:300" rel="stylesheet">
+    <link rel="stylesheet" href="boostrap.css">
     <script src="script.js"></script>
-    <title>Jurcik - CryptoPrice</title>
+    <title>CryptoWatch | Home</title>
+    <link rel="apple-touch-icon" sizes="57x57" href="img/favicon/apple-icon-57x57.png">
+    <link rel="apple-touch-icon" sizes="60x60" href="img/favicon/apple-icon-60x60.png">
+    <link rel="apple-touch-icon" sizes="72x72" href="img/favicon/apple-icon-72x72.png">
+    <link rel="apple-touch-icon" sizes="76x76" href="img/favicon/apple-icon-76x76.png">
+    <link rel="apple-touch-icon" sizes="114x114" href="img/favicon/apple-icon-114x114.png">
+    <link rel="apple-touch-icon" sizes="120x120" href="img/favicon/apple-icon-120x120.png">
+    <link rel="apple-touch-icon" sizes="144x144" href="img/favicon/apple-icon-144x144.png">
+    <link rel="apple-touch-icon" sizes="152x152" href="img/favicon/apple-icon-152x152.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="img/favicon/apple-icon-180x180.png">
+    <link rel="icon" type="image/png" sizes="192x192"  href="img/favicon/android-icon-192x192.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="img/favicon/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="96x96" href="img/favicon/favicon-96x96.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="img/favicon/favicon-16x16.png">
+    <link rel="manifest" href="/manifest.json">
+    <meta name="msapplication-TileColor" content="#ffffff">
+    <meta name="msapplication-TileImage" content="/ms-icon-144x144.png">
+    <meta name="theme-color" content="#ffffff">
 </head>
 
 <body>
+    <!--NAVIGATION BAR - start -->
     <nav class="nav-bar">
-        <div class="nav-brand">Jurcik</div>
-        <div class="nav-links">Middle</div>
-        <div class="nav-right">Right</div>
+        <div class="nav-brand">
+            <a href="/"><img class="page-logo" src="img/logo/CryptoWatch_transp_low.png" alt=""></a>
+        </div>
+        <div class="nav-links"></div>
+        <div class="nav-right">
+            <span style="font-size:30px;cursor:pointer" onclick="openNav()">&#9776;</span>
+        </div>
     </nav>
-    <div class="content-container">
+    <!--NAVIGATION BAR - end -->
+
+    <!--SIDE NAV - start -->
+    <div id="mySidenav" class="sidenav">
+        <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
+        <a href="#">About</a>
+        <a href="#">Source code</a>
+        <a href="#">Autor</a>
+        <a href="#">Contact</a>
+      </div>
+    <!--SIDE NAV - start -->
+    <div class="banner-section">
+        <div class="container">
+            <img class="banner-img" src="img/illustations/portfolio.svg" alt="banner-img">
+            <div class="banner-text">
+                <h1>Watch All Your Crypto in One Place</h1>
+                <p>Gain a competitive edge tracking your holdings over time with customizable charts and watchlists, instant price alerts, and frictionless multi-exchange trading all in one place.</p>
+                <a class="custom-primary-btn">Watch Now !</a>
+            </div>
+        </div>
+    </div>
+
+
+    <div class="content-container crypto-card-container">
+
         <div class="card-item">
             <img src="img/bitcoin.png" class="crypto-logo btc-logo">
             <p class="crypto-title">Bitcoin</p>
             <p class="crypto-sub-title">(BTC)</p>
-            <h2 id="btc-price">---.--</h2>
+            <div class="price-wrapper">
+                <h2 id="btc-price">
+                    <ul class="loading-text">
+                        <li>l</li>
+                        <li>o</li>
+                        <li>a</li>
+                        <li>d</li>
+                        <li>i</li>
+                        <li>n</li>
+                        <li>g</li>
+                    </ul>
+                </h2>
+            </div>
             <span class="change-text">24h Change: </span><span class="change-percent btc-price">-</span>
-            <p></p>
         </div>
         <div class="card-item">
             <img src="img/ethereum.png" class="crypto-logo eth-logo">
             <p class="crypto-title">Ethereum</p>
             <p class="crypto-sub-title">(ETH)</p>
-            <h2 id="eth-price">---.--</h2>
+            <div class="price-wrapper">
+                <h2 id="eth-price">
+                    <ul class="loading-text">
+                        <li>l</li>
+                        <li>o</li>
+                        <li>a</li>
+                        <li>d</li>
+                        <li>i</li>
+                        <li>n</li>
+                        <li>g</li>
+                    </ul>
+                </h2>
+            </div>
             <span class="change-text">24h Change: </span><span class="change-percent eth-price">-</span>
-            <p></p>
         </div>
         <div class="card-item">
             <img src="img/bnb.png" class="crypto-logo bnb-logo">
             <p class="crypto-title">Binance coin</p>
             <p class="crypto-sub-title">(BNB)</p>
-            <h2 id="bnb-price">---.--</h2>
+            <div class="price-wrapper">
+                <h2 id="bnb-price">
+                    <ul class="loading-text">
+                        <li>l</li>
+                        <li>o</li>
+                        <li>a</li>
+                        <li>d</li>
+                        <li>i</li>
+                        <li>n</li>
+                        <li>g</li>
+                    </ul>
+                </h2>
+            </div>
             <span class="change-text">24h Change: </span><span class="change-percent bnb-price">-</span>
-            <p></p>
         </div>
         <div class="card-item">
             <img src="img/cardano.png" class="crypto-logo ada-logo">
             <p class="crypto-title">Cardano</p>
             <p class="crypto-sub-title">(ADA)</p>
-            <h2 id="ada-price">---.--</h2>
+            <div class="price-wrapper">
+                <h2 id="ada-price">
+                    <ul class="loading-text">
+                        <li>l</li>
+                        <li>o</li>
+                        <li>a</li>
+                        <li>d</li>
+                        <li>i</li>
+                        <li>n</li>
+                        <li>g</li>
+                    </ul>
+                </h2>
+            </div>
             <span class="change-text">24h Change: </span><span class="change-percent ada-price">-</span>
-            <p></p>
         </div>
         <div class="card-item">
             <img src="img/dogecoin.png" class="crypto-logo doge-logo">
             <p class="crypto-title">Dogecoin</p>
             <p class="crypto-sub-title">(DOGE)</p>
-            <h2 id="doge-price">---.--</h2>
+            <div class="price-wrapper">
+                <h2 id="doge-price">
+                    <ul class="loading-text">
+                        <li>l</li>
+                        <li>o</li>
+                        <li>a</li>
+                        <li>d</li>
+                        <li>i</li>
+                        <li>n</li>
+                        <li>g</li>
+                    </ul>
+                </h2>
+            </div>
             <span class="change-text">24h Change: </span><span class="change-percent doge-price">-</span>
-            <p></p>
         </div>
         <div class="card-item">
             <img src="img/xrp.png" class="crypto-logo xrp-logo">
             <p class="crypto-title">XRP</p>
             <p class="crypto-sub-title">(XRP)</p>
-            <h2 id="xrp-price">---.--</h2>
+            <div class="price-wrapper">
+                <h2 id="xrp-price">
+                    <ul class="loading-text">
+                        <li>l</li>
+                        <li>o</li>
+                        <li>a</li>
+                        <li>d</li>
+                        <li>i</li>
+                        <li>n</li>
+                        <li>g</li>
+                    </ul>
+                </h2>
+            </div>
             <span class="change-text">24h Change: </span><span class="change-percent xrp-price">-</span>
-            <p></p>
+        </div>
+        <div class="card-item">
+            <img src="img/ltc.jpg" class="crypto-logo ltc-logo">
+            <p class="crypto-title">Litecoin</p>
+            <p class="crypto-sub-title">(LTC)</p>
+            <div class="price-wrapper">
+                <h2 id="ltc-price">
+                    <ul class="loading-text">
+                        <li>l</li>
+                        <li>o</li>
+                        <li>a</li>
+                        <li>d</li>
+                        <li>i</li>
+                        <li>n</li>
+                        <li>g</li>
+                    </ul>
+                </h2>
+            </div>
+            <span class="change-text">24h Change: </span><span class="change-percent ltc-price">-</span>
+        </div>
+        <div class="card-item">
+            <img src="img/dot.jpg" class="crypto-logo dot-logo">
+            <p class="crypto-title">Polkadot</p>
+            <p class="crypto-sub-title">(DOT)</p>
+            <div class="price-wrapper">
+                <h2 id="dot-price">
+                    <ul class="loading-text">
+                        <li>l</li>
+                        <li>o</li>
+                        <li>a</li>
+                        <li>d</li>
+                        <li>i</li>
+                        <li>n</li>
+                        <li>g</li>
+                    </ul>
+                </h2>
+            </div>
+            <span class="change-text">24h Change: </span><span class="change-percent dot-price">-</span>
         </div>
     </div>
 </body>
