@@ -13,7 +13,9 @@
     <link href="https://fonts.googleapis.com/css?family=Montserrat:900|Work+Sans:300" rel="stylesheet">
     <link rel="stylesheet" href="boostrap.css">
     <script src="script.js"></script>
+    <script src="load.js"></script>
     <title>CryptoWatch | Home</title>
+    <!--FAVICON ICONS - start -->
     <link rel="apple-touch-icon" sizes="57x57" href="img/favicon/apple-icon-57x57.png">
     <link rel="apple-touch-icon" sizes="60x60" href="img/favicon/apple-icon-60x60.png">
     <link rel="apple-touch-icon" sizes="72x72" href="img/favicon/apple-icon-72x72.png">
@@ -31,9 +33,32 @@
     <meta name="msapplication-TileColor" content="#ffffff">
     <meta name="msapplication-TileImage" content="/ms-icon-144x144.png">
     <meta name="theme-color" content="#ffffff">
+    <!--FAVICON ICONS - end -->
 </head>
 
 <body>
+    <template class="card-item-template">
+        <div class="card-item">
+            <img src="img/bitcoin.png" class="crypto-logo btc-logo">
+            <p class="crypto-title">Bitcoin</p>
+            <p class="crypto-sub-title">(BTC)</p>
+            <div class="price-wrapper">
+                <h2 id="btc-price">
+                    <ul class="loading-text">
+                        <li>l</li>
+                        <li>o</li>
+                        <li>a</li>
+                        <li>d</li>
+                        <li>i</li>
+                        <li>n</li>
+                        <li>g</li>
+                    </ul>
+                </h2>
+            </div>
+            <span class="change-text">24h Change: </span><span class="change-percent btc-price">-</span>
+        </div>
+    </template>
+    
     <!--NAVIGATION BAR - start -->
     <nav class="nav-bar">
         <div class="nav-brand">
@@ -222,6 +247,20 @@
             <span class="change-text">24h Change: </span><span class="change-percent dot-price">-</span>
         </div>
     </div>
+
+    <button onclick="showContent()">Show hidden content</button>
+
+    <footer class="main-footer">
+        <div class="container">
+            <div class="left-side">
+                Left
+            </div>
+            <div class="right-side">
+                Right
+            </div>
+        </div>
+    </footer>
+
 </body>
 
 </html>
