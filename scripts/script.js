@@ -119,5 +119,5 @@ function scrollFunction() {
         navBar.style.height = "100px";
         navBar.classList.remove("shadow-bottom");
     }
-    if (bannerTranslate<0) bannerElement.style.transform = "translateY("+bannerTranslate+"px)"; 
+    if (bannerTranslate<0) bannerElement.style.transform = "translateY("+bannerTranslate+"px)";
 }
